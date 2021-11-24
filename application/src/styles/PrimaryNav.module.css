@@ -1,0 +1,90 @@
+.container {
+    width: 100%;
+    height: 7vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+}
+
+.inner_container {
+    width: 85%;
+    height: 90%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid_one {
+    width: 50%;
+    height: 90%;
+
+    display: flex;
+    justify-content: ;
+    align-items: center;
+}
+
+.grid_two {
+    width: 50%;
+    height: 90%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.grid_one_item {
+    width: 10%;
+    height: 30%;
+    margin: 2%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid_two_item {
+    width: 15%;
+    height: 50%;
+
+    margin: 2%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid black;
+
+    transition: .5s ease-in-out;
+}
+.grid_two_item:hover {
+    background-color: orange;
+    transition: .5s ease-in-out;
+
+    cursor: pointer;
+}
+
+.grid_one_item_inner {
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+
+    color: black;
+}
+.grid_one_item_inner:hover {
+    color: orange;
+}
+
+.grid_two_item_inner {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    background-color: transparent;
+    border: none;
+}
+.grid_two_item_inner:hover {
+    cursor: pointer;
+}
