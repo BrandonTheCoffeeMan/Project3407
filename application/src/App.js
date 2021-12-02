@@ -8,6 +8,7 @@ import {
 // components
 import Home from './components/Home'
 import Register from './components/Authentication/Register'
+import Login from './components/Authentication/Login'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Home />} />
         <Route exact path='/Project3407-Register' element={<Register />} />
+        <Route exact path='/Project3407-Login' element={<Login />} />
       </Routes>
     </Router>
   );

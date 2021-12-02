@@ -1,12 +1,6 @@
 import * as yup from 'yup';
 
 export default yup.object().shape({
-    username:
-        yup
-            .string()
-            .required('*')
-            .max(50, 'Username must be 50 characters or less.')
-            .min(5, 'Username must be 5 characters or more'),
     
     email:
         yup
@@ -14,12 +8,6 @@ export default yup.object().shape({
             .email('Email must be valid.')
             .required('*')
             .max(255, 'Email must be 255 characters for less.'),
-
-    tag:
-        yup
-            .string()
-            .max(15, 'Handle must be 15 characters or less.')
-            .matches(/^[A-Za-z0-9_]+$/, "Handle can only contain alphanumeric characters and underscores."),
 
     password:
         yup

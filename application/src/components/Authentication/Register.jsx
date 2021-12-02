@@ -1,15 +1,17 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import * as yup from 'yup';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import formSchema from './formSchema'
 import classes from '../../styles/Register.module.css'
 import PrimaryNav from '../Nav/PrimaryNav'
+import { register } from '../../utils/actions'
+import { connect } from 'react-redux'
 
 
 
 // Register - Needs to be passed register action once created!
-const Register = () => {
+const Register = ({register}) => {
 
     // Initial state declarations
 
@@ -41,12 +43,15 @@ const Register = () => {
 
     // Handles the submit event
     const submitHandler = event => {
+        event.preventDefault()
         const newUser = {
             username: user.username,
             email: user.email,
             tag: user.tag,
             password: user.password
         }
+        register(newUser)
+        navigate('/Project3407-Login')
     }
         // register(newUser) - Once action is created un-comment this to allow the newUser to be passed to the register action!
         // navigate.push('/') This will redirect to the login page - be sure to update this! The axios request underneath this is used until I get the redux store setup.
@@ -90,6 +95,12 @@ const Register = () => {
             [name]: value
         })
     }
+
+    useEffect(() => {
+        formSchema.isValid(user).then((valid) => {
+            setDisabled(!valid)
+        })
+    }, [user])
 
 
     return (
@@ -142,6 +153,7 @@ const Register = () => {
                             {error.tag}
                             {error.password}
                         </div>
+                        <button disabled={disabled}>Submit</button>
                     </form>
                 </div>
             </div>
@@ -152,4 +164,11 @@ const Register = () => {
 
 
 }
-export default Register;
+
+const mapStateToProps = (state) => {
+    return {
+        ...state
+    }
+}
+
+export default connect(mapStateToProps, {register})(Register)
