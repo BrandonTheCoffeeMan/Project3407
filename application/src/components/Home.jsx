@@ -12,10 +12,21 @@ function Home() {
     return (
         <>
         <PrimaryNav />
-        <div className={classes.container}>
-            <h1 className={classes.welcome_title}>Welcome to Project3407</h1>
-            <p className={classes.welcome_paragraph}>Please register or sign in to view your dashboard!</p>
-        </div>
+        <header style={{ backgroundImage: 'url(/img/CTreeCloseUp.jpg' }} className={classes.header_container}>
+            <div className={classes.header_inner_shift}>
+                <div className={classes.header_content_left}>
+                    <h1 className={classes.header_content_left_title}>
+                        SquadFeed
+                    </h1>
+                    <h2>
+
+                    </h2>
+                </div>
+                <div className={classes.header_content_right}>
+
+                </div>
+            </div>
+        </header>
         </>
     )
 }
